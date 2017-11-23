@@ -25,6 +25,8 @@ class SongsController < ApplicationController
   end
 
   def new
+    @pref = Preference.new
+    if @pref.allow_create_songs
     @song = Song.new
   end
 
